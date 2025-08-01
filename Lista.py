@@ -53,5 +53,4 @@ while True:
         print(f"Item N°{item_N} removido com sucesso")
     if pergunta== 0:
         break
-print(""",
-""".join(Lista_de_tarefas))
+

@@ -22,7 +22,7 @@ while True:
 
 """)
     with open("Lista.txt","r+") as lista:
-        lista_de_tarefas=lista.read().split()
+            lista_de_tarefas=lista.read().split("\n")
     
 
     pergunta=int(input("Oque voçê gostaria de fazer na sua lista? "))
@@ -33,6 +33,7 @@ while True:
         input("Aperte ENTER para continuar")        
     if pergunta == 2:
         a=0
+        
         for x in lista_de_tarefas:
             print(f"""{a}-{x}""")
             a+=1
@@ -60,5 +61,7 @@ while True:
         input("aperte ENTER para continuar")
     if pergunta== 0:
         break
+    
+
 print(""",
 """.join(lista_de_tarefas))
