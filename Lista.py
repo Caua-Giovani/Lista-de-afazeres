@@ -37,7 +37,7 @@ while True:
         for x in Lista_de_tarefas:
 
             print(f"""{a}-{x}""")
-            a+=1        
+            a+=1
         item_N=int(input("Qual desses voçê gostaria de marcar como concluido? "))
         Lista_de_tarefas[item_N]=Lista_de_tarefas[item_N] + " ✓"
         print(f"Item N°{item_N} marcado como concluido")
