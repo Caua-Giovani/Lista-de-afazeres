@@ -1,5 +1,7 @@
 #Lista de afazeres
 from open import Escrever
+from open import Remover
+from open import Marcar_concluido
 
 
 
@@ -21,8 +23,11 @@ while True:
 |____________________________|
 
 """)
-    with open("Lista.txt","r+") as lista:
-            lista_de_tarefas=lista.read().split("\n")
+    
+    lista = open("Lista.txt","r+")
+
+    lista_de_tarefas=lista.read().splitlines()
+
     
 
     pergunta=int(input("Oque voçê gostaria de fazer na sua lista? "))
@@ -46,7 +51,7 @@ while True:
             print(f"""{a}-{x}""")
             a+=1        
         item_N=int(input("Qual desses voçê gostaria de marcar como concluido? "))
-        lista_de_tarefas[item_N]=lista_de_tarefas[item_N] + " ✓"
+        Marcar_concluido("Lista.txt",item_N)
         print(f"Item N°{item_N} marcado como concluido")
         input("aperte ENTER para continuar")
     if pergunta ==4:
@@ -56,11 +61,13 @@ while True:
             print(f"""{a}-{x}""")
             a+=1
         item_N=int(input("Qual desses voçê gostaria de remover? ")) 
-        del lista_de_tarefas[item_N]
+        Remover("Lista.txt",item_N)
         print(f"Item N°{item_N} removido com sucesso")
         input("aperte ENTER para continuar")
     if pergunta== 0:
         break
+    lista.close()
+    
     
 
 print(""",
