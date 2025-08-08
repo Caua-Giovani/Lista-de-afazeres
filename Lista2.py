@@ -2,6 +2,7 @@
 from open import Escrever
 from open import Remover
 from open import Marcar_concluido
+import time
 
 
 
@@ -25,10 +26,11 @@ while True:
 """)
     
     lista = open("Lista.txt","r+")
-
+    
     lista_de_tarefas=lista.read().splitlines()
 
     
+
 
     pergunta=int(input("Oque voçê gostaria de fazer na sua lista? "))
     if pergunta == 1:
@@ -36,7 +38,7 @@ while True:
         Escrever(f"{tarefa}")
         print("Tarefa adicionada com sucesso!!")
         input("Aperte ENTER para continuar")        
-    if pergunta == 2:
+    elif pergunta == 2:
         a=0
         
         for x in lista_de_tarefas:
@@ -44,7 +46,7 @@ while True:
             a+=1
         print("Aqui estao suas tarefas!!")
         input("Aperte ENTER para continuar")
-    if pergunta ==3:
+    elif pergunta ==3:
         a=0
         for x in lista_de_tarefas:
 
@@ -54,7 +56,7 @@ while True:
         Marcar_concluido("Lista.txt",item_N)
         print(f"Item N°{item_N} marcado como concluido")
         input("aperte ENTER para continuar")
-    if pergunta ==4:
+    elif pergunta ==4:
         a=0
         for x in lista_de_tarefas:
 
@@ -64,8 +66,11 @@ while True:
         Remover("Lista.txt",item_N)
         print(f"Item N°{item_N} removido com sucesso")
         input("aperte ENTER para continuar")
-    if pergunta== 0:
+    elif pergunta== 0:
         break
+    else:
+        print("Este item não existe")
+        time.sleep(1)
     lista.close()
     
     
